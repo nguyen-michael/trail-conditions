@@ -8,6 +8,15 @@
   registerPanel(panel);
 </script>
 
+<style>
+  .tab-panel {
+    height: 12rem;
+    overflow: auto;
+  }
+</style>
+
 {#if $selectedPanel === panel}
-  <slot />
+  <div class="tab-panel">
+    <slot />
+  </div>
 {/if}
