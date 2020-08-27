@@ -1,11 +1,14 @@
 <script>
   import { Tabs, TabList, TabPanel, Tab } from "./tabs.js";
+  import UpdatePanel from "./UpdatePanel.svelte";
   export let name;
   export let location;
   export let description;
-  export let condition;
-  export let lastUpdated;
-  export let trailId;
+  let condition;
+  let lastUpdated;
+  let trailId;
+
+  // We should gather DB info here. This will update indiv updates as they're added
 </script>
 
 <Tabs>
@@ -21,8 +24,7 @@
   </TabPanel>
   <TabPanel>
     <h2>Update condition</h2>
-    <p>Inputs here</p>
-    <p>Trail ID: {trailId}</p>
+    <UpdatePanel {name} />
   </TabPanel>
   <TabPanel>
     <h2>{name}</h2>

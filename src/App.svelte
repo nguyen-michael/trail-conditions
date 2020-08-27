@@ -92,7 +92,7 @@
   {#each allTrails as trail}
     <div class="accordion">
       <button class="full-width" on:click={() => expand(trail)}>
-        {trail.name}: {trail.condition}, as of: {trail.lastUpdated}
+        {trail.name}: CONDITION HERE, as of: LAST UPDATEDED HERE
       </button>
       {#if trail.opened}
         <div class="slider" transition:slide={{ duration: 250 }}>
