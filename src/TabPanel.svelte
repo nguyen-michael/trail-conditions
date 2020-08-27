@@ -10,7 +10,7 @@
 
 <style>
   .tab-panel {
-    height: 12rem;
+    height: 14rem;
     overflow: auto;
   }
 </style>

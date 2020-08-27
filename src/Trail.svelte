@@ -10,16 +10,11 @@
 
 <Tabs>
   <TabList>
-    <Tab>{name}</Tab>
-    <Tab>condition</Tab>
-    <Tab>updated: {lastUpdated}</Tab>
+    <Tab>Condition</Tab>
+    <Tab>Update</Tab>
+    <Tab>Trail Info</Tab>
   </TabList>
 
-  <TabPanel>
-    <h2>{name}</h2>
-    <p>{location}</p>
-    <p>description: {description}</p>
-  </TabPanel>
   <TabPanel>
     <h2>{condition}</h2>
     <p>updated: {lastUpdated}</p>
@@ -28,5 +23,10 @@
     <h2>Update condition</h2>
     <p>Inputs here</p>
     <p>Trail ID: {trailId}</p>
+  </TabPanel>
+  <TabPanel>
+    <h2>{name}</h2>
+    <p>{location}</p>
+    <p>description: {description}</p>
   </TabPanel>
 </Tabs>
