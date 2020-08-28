@@ -9,6 +9,21 @@
   function updateCondition() {
     created = Date.now();
 
+    // Previous way to update by adding all conds to a collection.
+    // Will be useful to revisit.
+    /*     db.collection("conditions").add({
+      condition,
+      trail: name,
+      description,
+      created,
+    }); */
+
+    /*     db.collection("conditions").doc(name).update({
+      condition,
+      description,
+      created,
+    }); */
+
     db.collection("conditions").add({
       condition,
       trail: name,

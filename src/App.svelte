@@ -1,11 +1,16 @@
 <script>
-  import { slide } from "svelte/transition";
   import Trail from "./Trail.svelte";
   import trails from "./trails-info";
 
+  // Array of trail names
+  let names = trails.map((trail) => {
+    return trail.name;
+  });
+
   let allTrails = trails;
 
-  let search = "";
+  // Eliminate Search For now
+  /*   let search = "";
 
   $: if (search !== "") {
     allTrails = trails.filter((trail) => {
@@ -15,11 +20,10 @@
 
   $: if (search === "") {
     allTrails = trails;
-  }
-
-  const expand = (trail) => {
+  } */
+  const handleExpand = (event) => {
     allTrails = allTrails.map((t) => {
-      if (t.name === trail.name) {
+      if (t.name === event.detail.trailName) {
         t.opened = !t.opened;
       }
       return t;
@@ -28,22 +32,6 @@
 </script>
 
 <style>
-  .accordion {
-    margin-bottom: 10px;
-  }
-
-  .slider {
-    border: 1px solid #eee;
-    padding: 4px 20px;
-
-    /* Added some color to illustrate the issue */
-    background-color: #fefefe;
-  }
-
-  .full-width {
-    width: 100%;
-  }
-
   main {
     text-align: center;
     padding: 1em;
@@ -87,18 +75,9 @@
 
 <main>
   <h1>Austin MTB Trail Conditions</h1>
-  <input class="full-width" bind:value={search} placeholder="search!" />
+  <!-- <input class="full-width" bind:value={search} placeholder="search!" /> -->
   <hr />
   {#each allTrails as trail}
-    <div class="accordion">
-      <button class="full-width" on:click={() => expand(trail)}>
-        {trail.name}: CONDITION HERE, as of: LAST UPDATEDED HERE
-      </button>
-      {#if trail.opened}
-        <div class="slider" transition:slide={{ duration: 250 }}>
-          <Trail {...trail} />
-        </div>
-      {/if}
-    </div>
+    <Trail {...trail} on:expand={handleExpand} />
   {/each}
 </main>
