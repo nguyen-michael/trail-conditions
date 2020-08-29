@@ -27,6 +27,20 @@ let trails = [
     location: "yaupon climb baby climb",
     opened: false,
   },
+  {
+    name: "emma long",
+    description:
+      "Also you exit onto a trail where hikers frequent, so keep it under control here. A super fun freeride trail starting with the Pinkbike drop, an impressive 12' by 12' drop followed non stop features with lots of speed and perfect flow. Large group of trees down on northern section of trail, between buckhorn and club gap. Tree down near southern trail head. If you keep your momentum you can charge up pretty much all the climbs and the descents are steep and tricky.",
+    location: "city park road",
+    opened: false,
+  },
+  {
+    name: "satn",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
 ];
 
 export default trails;

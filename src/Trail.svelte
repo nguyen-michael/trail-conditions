@@ -45,16 +45,48 @@
     /* Added some color to illustrate the issue */
     background-color: #fefefe;
   }
-
-  .full-width {
-    width: 100%;
-  }
 </style>
 
-{#each $results as result}
+{#if $results}
+
+  {#each $results as result}
+  {console.log(result)}
+    <div class="accordion">
+      <div class="full-width" on:click={() => expand()}>
+        {name}: {result.condition}, as of: {result.created}
+      </div>
+      {#if opened}
+        <div class="slider" transition:slide={{ duration: 250 }}>
+          <Tabs>
+            <TabList>
+              <Tab>Condition</Tab>
+              <Tab>Update</Tab>
+              <Tab>Trail Info</Tab>
+            </TabList>
+
+            <TabPanel>
+              <h2>{result.condition}</h2>
+              <p>updated: {result.created}</p>
+              <p>{result.description}</p>
+            </TabPanel>
+            <TabPanel>
+              <h2>Update condition</h2>
+              <UpdatePanel {name} />
+            </TabPanel>
+            <TabPanel>
+              <h2>{name}</h2>
+              <p>{location}</p>
+              <p>description: {description}</p>
+            </TabPanel>
+          </Tabs>
+        </div>
+      {/if}
+    </div>
+  {/each}
+{:else}
   <div class="accordion">
     <button class="full-width" on:click={() => expand()}>
-      {name}: {result.condition}, as of: {result.created}
+      {name}: Needs condition
     </button>
     {#if opened}
       <div class="slider" transition:slide={{ duration: 250 }}>
@@ -66,9 +98,7 @@
           </TabList>
 
           <TabPanel>
-            <h2>{result.condition}</h2>
-            <p>updated: {result.created}</p>
-            <p>{result.description}</p>
+            <h2>No info</h2>
           </TabPanel>
           <TabPanel>
             <h2>Update condition</h2>
@@ -83,4 +113,4 @@
       </div>
     {/if}
   </div>
-{/each}
+{/if}

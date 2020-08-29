@@ -33,7 +33,21 @@
   }
 </script>
 
-<textarea bind:value={description} />
+<style>
+  button {
+    border: 1px solid black;
+  }
+
+  button:hover {
+    background-color: transparent;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+</style>
+
+<textarea bind:value={description} class="full-width" />
 <select bind:value={condition}>
   <option value="gtg">100% Good</option>
   <option value="mostly">Mostly Good</option>

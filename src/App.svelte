@@ -3,9 +3,9 @@
   import trails from "./trails-info";
 
   // Array of trail names
-  let names = trails.map((trail) => {
+/*   let names = trails.map((trail) => {
     return trail.name;
-  });
+  }); */
 
   let allTrails = trails;
 
