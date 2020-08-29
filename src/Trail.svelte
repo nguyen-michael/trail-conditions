@@ -13,6 +13,11 @@
   export let description;
   export let opened;
 
+  let locationURL = `https://www.google.com/maps/search/${location.replace(
+    " ",
+    "+"
+  )}`;
+
   const dispatch = createEventDispatcher();
 
   function expand() {
@@ -131,7 +136,7 @@
             </TabPanel>
             <TabPanel>
               <h2>{name}</h2>
-              <p>{location}</p>
+              <a href={locationURL}>{location}</a>
               <p>description: {description}</p>
             </TabPanel>
           </Tabs>
@@ -161,7 +166,9 @@
           </TabPanel>
           <TabPanel>
             <h2>{name}</h2>
-            <p>{location}</p>
+            <a href={locationURL} target="_blank" rel="noreferrer">
+              {location}
+            </a>
             <p>description: {description}</p>
           </TabPanel>
         </Tabs>
