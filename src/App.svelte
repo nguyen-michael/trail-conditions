@@ -3,11 +3,13 @@
   import trails from "./trails-info";
 
   // Array of trail names
-/*   let names = trails.map((trail) => {
+  /*   let names = trails.map((trail) => {
     return trail.name;
   }); */
 
-  let allTrails = trails;
+  let allTrails = trails.sort((a, b) => {
+    return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+  });
 
   // Eliminate Search For now
   /*   let search = "";

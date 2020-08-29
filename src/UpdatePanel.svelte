@@ -6,23 +6,10 @@
   let description;
   let created;
 
+  let sent = false;
+
   function updateCondition() {
     created = Date.now();
-
-    // Previous way to update by adding all conds to a collection.
-    // Will be useful to revisit.
-    /*     db.collection("conditions").add({
-      condition,
-      trail: name,
-      description,
-      created,
-    }); */
-
-    /*     db.collection("conditions").doc(name).update({
-      condition,
-      description,
-      created,
-    }); */
 
     db.collection("conditions").add({
       condition,
@@ -30,6 +17,13 @@
       description,
       created,
     });
+
+    sent = true;
+    description = "";
+
+    setTimeout(() => {
+      sent = false;
+    }, 1500);
   }
 </script>
 
@@ -40,6 +34,10 @@
 
   button:hover {
     background-color: transparent;
+  }
+
+  .sent {
+    background-color:chartreuse ;
   }
 
   textarea {
@@ -54,4 +52,4 @@
   <option selected value="caution">Caution</option>
   <option value="nogo">No Go</option>
 </select>
-<button on:click={updateCondition}>SEND IT</button>
+<button on:click={updateCondition} class:sent="{sent}">{sent ? 'SENT!' : 'SEND IT!'}</button>

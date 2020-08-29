@@ -13,10 +13,6 @@
   export let description;
   export let opened;
 
-  let condition;
-  let updated;
-  let conditionDescription;
-
   const dispatch = createEventDispatcher();
 
   function expand() {
@@ -31,6 +27,43 @@
     .limit(1);
 
   const results = collectionData(query).pipe(startWith([]));
+
+  function processDate(ms) {
+    const timeDisplayOptions = {
+      timeZoneName: "short",
+    };
+    const datetime = new Date(ms).toLocaleString("en-US", timeDisplayOptions);
+    const now = new Date();
+    const agoMillis = now - new Date(ms);
+
+    const ago = timeDifference(agoMillis);
+
+    return { datetime, ago };
+  }
+
+  function timeDifference(elapsed) {
+    const msPerMinute = 60 * 1000;
+    const msPerHour = msPerMinute * 60;
+    const msPerDay = msPerHour * 24;
+    const msPerMonth = msPerDay * 30;
+    const msPerYear = msPerDay * 365;
+
+    if (elapsed < msPerMinute) {
+      return Math.round(elapsed / 1000) + "s ago";
+    } else if (elapsed < msPerHour) {
+      return Math.round(elapsed / msPerMinute) + "min ago";
+    } else if (elapsed < msPerDay) {
+      return Math.round(elapsed / msPerHour) + "hr ago";
+    } else if (elapsed < msPerMonth) {
+      return "approximately " + Math.round(elapsed / msPerDay) + "d ago";
+    } else if (elapsed < msPerYear) {
+      return (
+        "approximately " + Math.round(elapsed / msPerMonth) + " months ago"
+      );
+    } else {
+      return "approximately " + Math.round(elapsed / msPerYear) + "y ago";
+    }
+  }
 </script>
 
 <style>
@@ -45,15 +78,38 @@
     /* Added some color to illustrate the issue */
     background-color: #fefefe;
   }
+
+  .header {
+    border: 1px solid #ccc;
+    padding: 0.5rem 0;
+    background-color: #fcfcfc;
+  }
+
+  .nogo {
+    color: red;
+    font-weight: bold;
+  }
+  .caution {
+    color: orange;
+    font-weight: bold;
+  }
+  .mostly {
+    color: greenyellow;
+    font-weight: bold;
+  }
+  .gtg {
+    color: forestgreen;
+    font-weight: bold;
+  }
 </style>
 
-{#if $results}
-
+{#if $results.length !== 0}
   {#each $results as result}
-  {console.log(result)}
     <div class="accordion">
-      <div class="full-width" on:click={() => expand()}>
-        {name}: {result.condition}, as of: {result.created}
+      <div class="header" on:click={() => expand()}>
+        {name}:
+        <span class={result.condition}>{result.condition}</span>
+        as of: {processDate(result.created).ago}
       </div>
       {#if opened}
         <div class="slider" transition:slide={{ duration: 250 }}>
@@ -65,9 +121,9 @@
             </TabList>
 
             <TabPanel>
-              <h2>{result.condition}</h2>
-              <p>updated: {result.created}</p>
+              <h2 class={result.condition}>{result.condition}</h2>
               <p>{result.description}</p>
+              <p>updated: {processDate(result.created).datetime}</p>
             </TabPanel>
             <TabPanel>
               <h2>Update condition</h2>
@@ -83,11 +139,9 @@
       {/if}
     </div>
   {/each}
-{:else}
+{:else if $results.length === 0}
   <div class="accordion">
-    <button class="full-width" on:click={() => expand()}>
-      {name}: Needs condition
-    </button>
+    <div class="header" on:click={() => expand()}>{name}: Needs condition</div>
     {#if opened}
       <div class="slider" transition:slide={{ duration: 250 }}>
         <Tabs>
@@ -98,7 +152,8 @@
           </TabList>
 
           <TabPanel>
-            <h2>No info</h2>
+            <h2>No Status Condition</h2>
+            <p>Please update if you have information.</p>
           </TabPanel>
           <TabPanel>
             <h2>Update condition</h2>
