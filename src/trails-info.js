@@ -41,6 +41,132 @@ let trails = [
     location: "south of the river",
     opened: false,
   },
+  {
+    name: "mckinney falls",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "bull creek",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "cat mountain",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "flat creek",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "flat rock",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "lake georgetown",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "lakeway",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "satn - mms",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "mule shoe",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "pace bend",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "pedernales falls",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "reimers",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "reveille",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "rocky hill",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "satn - slaughter",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "spider",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "st eds",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
+  {
+    name: "country club",
+    description:
+      "At the bottom the trail joins Hide and Seek above a major creek crossing. Technical singletrack in the Southside Hills above Kilbride. Gets dry in the summer. Watch that you don't overshoot the switchback to stay on the black diamond descent - the blue route is completely overgrown. IMO it is a better ride to turn around and follow the same trail down.",
+    location: "south of the river",
+    opened: false,
+  },
 ];
 
 export default trails;
