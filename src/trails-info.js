@@ -48,8 +48,7 @@ let trails = [
     name: "satn",
     shortName: "SATN Trails",
     longName: "South Austin Trail Network",
-    description:
-      "A network of 60-80+ miles of trails spanning South Austin.",
+    description: "A network of 60-80+ miles of trails spanning South Austin.",
     location: "30.228117, -97.811378",
     opened: false,
   },
@@ -120,8 +119,7 @@ let trails = [
     name: "satn - mms",
     shortName: "SATN - Mary Moore",
     longName: "South Austin Trail Network - Mary Moore Searight Park",
-    description:
-      "Send me info on these trails!",
+    description: "Send me info on these trails!",
     location: "30.162890, -97.807883",
     opened: false,
   },
@@ -183,8 +181,7 @@ let trails = [
     name: "satn - slaughter",
     shortName: "SATN - Slaughter",
     longName: "South Austin Trail Network - Slaughter",
-    description:
-      "Send me info on these trails!",
+    description: "Send me info on these trails!",
     location: "30.206919, -97.905445",
     opened: false,
   },
