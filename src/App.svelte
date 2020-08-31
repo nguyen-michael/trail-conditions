@@ -1,4 +1,5 @@
 <script>
+  import HelpModal from "./HelpModal.svelte";
   import Trail from "./Trail.svelte";
   import trails from "./trails-info";
 
@@ -11,6 +12,8 @@
     return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
   });
 
+  let openModal = false;
+
   // Eliminate Search For now
   /*   let search = "";
 
@@ -21,8 +24,11 @@
   }
 
   $: if (search === "") {
-    allTrails = trails;
+    allTrails = trails.sort((a, b) => {
+      return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+    });
   } */
+
   const handleExpand = (event) => {
     allTrails = allTrails.map((t) => {
       if (t.name === event.detail.trailName) {
@@ -30,6 +36,10 @@
       }
       return t;
     });
+  };
+
+  const handleModalClose = () => {
+    openModal = false;
   };
 </script>
 
@@ -45,6 +55,18 @@
     color: #ff3e00;
     text-transform: uppercase;
     font-size: 1.5em;
+  }
+
+  button {
+    /* position: absolute;
+    top: 1rem;
+    left: 50%; */
+    width: 4rem;
+    border: 1px solid #eee;
+    background-color: #fefefe;
+    padding: 0.25rem 0.5rem;
+    font-weight: bolder;
+    border-radius: 12px;
   }
 
   @media (min-width: 768px) {
@@ -76,7 +98,15 @@
 </style>
 
 <main>
+  <HelpModal {openModal} on:close={handleModalClose} />
+  <button
+    on:click={() => {
+      openModal = !openModal;
+    }}>
+    ?
+  </button>
   <h1>Austin MTB Trail Conditions</h1>
+
   <!-- <input class="full-width" bind:value={search} placeholder="search!" /> -->
   <hr />
   {#each allTrails as trail}

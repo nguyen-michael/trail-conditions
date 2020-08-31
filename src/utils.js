@@ -1,4 +1,4 @@
-export function timeDifference(elapsed) {
+function timeDifference(elapsed) {
   const msPerMinute = 60 * 1000;
   const msPerHour = msPerMinute * 60;
   const msPerDay = msPerHour * 24;
@@ -33,4 +33,17 @@ export function conditionSwitcher(condition) {
     default:
       break;
   }
+}
+
+export function processDate(ms) {
+  const timeDisplayOptions = {
+    timeZoneName: "short",
+  };
+  const datetime = new Date(ms).toLocaleString("en-US", timeDisplayOptions);
+  const now = new Date();
+  const agoMillis = now - new Date(ms);
+
+  const ago = timeDifference(agoMillis);
+
+  return { datetime, ago };
 }

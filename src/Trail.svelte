@@ -2,6 +2,7 @@
   import { Tabs, TabList, TabPanel, Tab } from "./tabs.js";
   import { slide } from "svelte/transition";
   import { createEventDispatcher } from "svelte";
+  import { conditionSwitcher, processDate } from "./utils.js";
 
   import UpdatePanel from "./UpdatePanel.svelte";
   import { db } from "./firebase";
@@ -9,6 +10,8 @@
   import { startWith } from "rxjs/operators";
 
   export let name;
+  export let shortName;
+  export let longName;
   export let location;
   export let description;
   export let opened;
@@ -32,43 +35,6 @@
     .limit(1);
 
   const results = collectionData(query).pipe(startWith([]));
-
-  function processDate(ms) {
-    const timeDisplayOptions = {
-      timeZoneName: "short",
-    };
-    const datetime = new Date(ms).toLocaleString("en-US", timeDisplayOptions);
-    const now = new Date();
-    const agoMillis = now - new Date(ms);
-
-    const ago = timeDifference(agoMillis);
-
-    return { datetime, ago };
-  }
-
-  function timeDifference(elapsed) {
-    const msPerMinute = 60 * 1000;
-    const msPerHour = msPerMinute * 60;
-    const msPerDay = msPerHour * 24;
-    const msPerMonth = msPerDay * 30;
-    const msPerYear = msPerDay * 365;
-
-    if (elapsed < msPerMinute) {
-      return Math.round(elapsed / 1000) + "s ago";
-    } else if (elapsed < msPerHour) {
-      return Math.round(elapsed / msPerMinute) + "min ago";
-    } else if (elapsed < msPerDay) {
-      return Math.round(elapsed / msPerHour) + "hr ago";
-    } else if (elapsed < msPerMonth) {
-      return "approximately " + Math.round(elapsed / msPerDay) + "d ago";
-    } else if (elapsed < msPerYear) {
-      return (
-        "approximately " + Math.round(elapsed / msPerMonth) + " months ago"
-      );
-    } else {
-      return "approximately " + Math.round(elapsed / msPerYear) + "y ago";
-    }
-  }
 </script>
 
 <style>
@@ -88,6 +54,10 @@
     border: 1px solid #ccc;
     padding: 0.5rem 0;
     background-color: #fcfcfc;
+  }
+
+  .header .name {
+    font-weight: bold;
   }
 
   .nogo {
@@ -112,8 +82,11 @@
   {#each $results as result}
     <div class="accordion">
       <div class="header" on:click={() => expand()}>
-        {name}:
-        <span class={result.condition}>{result.condition}</span>
+        <span class="name">{shortName}</span>
+        :
+        <span class={result.condition}>
+          {conditionSwitcher(result.condition)}
+        </span>
         as of: {processDate(result.created).ago}
       </div>
       {#if opened}
@@ -135,9 +108,9 @@
               <UpdatePanel {name} />
             </TabPanel>
             <TabPanel>
-              <h2>{name}</h2>
+              <h2>{longName}</h2>
               <a href={locationURL}>{location}</a>
-              <p>description: {description}</p>
+              <p>{description}</p>
             </TabPanel>
           </Tabs>
         </div>
@@ -146,7 +119,11 @@
   {/each}
 {:else if $results.length === 0}
   <div class="accordion">
-    <div class="header" on:click={() => expand()}>{name}: Needs condition</div>
+    <div class="header" on:click={() => expand()}>
+      <span class="name">{shortName}</span>
+      :
+      <span class="nogo">Needs condition</span>
+    </div>
     {#if opened}
       <div class="slider" transition:slide={{ duration: 250 }}>
         <Tabs>
@@ -165,11 +142,11 @@
             <UpdatePanel {name} />
           </TabPanel>
           <TabPanel>
-            <h2>{name}</h2>
+            <h2>{longName}</h2>
             <a href={locationURL} target="_blank" rel="noreferrer">
               {location}
             </a>
-            <p>description: {description}</p>
+            <p>{description}</p>
           </TabPanel>
         </Tabs>
       </div>
