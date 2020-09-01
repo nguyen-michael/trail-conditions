@@ -64,6 +64,7 @@
 
           <TabPanel>
             <h2>What's goin' on, here?!</h2>
+            <small>v 0.1.0</small>
             <p>
               This is an app to crowd-source trail conditions in the Austin
               area. Trail conditions are user-reported. To get started, click or
