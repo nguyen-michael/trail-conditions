@@ -1,0 +1,35 @@
+{
+  "name": "Austin MTB Trail Conditions",
+  "short_name": "ATX-MTB-TC",
+  "icons": [
+  {
+  "src": "/images/icons/cog-2-120-275104.png",
+  "sizes": "120x120",
+  "type": "image/png"
+  },
+  {
+  "src": "/images/icons/cog-2-144-275104.png",
+  "sizes": "144x144",
+  "type": "image/png"
+  },
+  {
+  "src": "/images/icons/cog-2-152-275104.png",
+  "sizes": "152x152",
+  "type": "image/png"
+  },
+  {
+  "src": "/images/icons/cog-2-192-275104.png",
+  "sizes": "192x192",
+  "type": "image/png"
+  },
+  {
+  "src": "/images/icons/cog-2-512-275104.png",
+  "sizes": "512x512",
+  "type": "image/png"
+  }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fcfcfc",
+  "theme_color": "#ff3e00"
+  }

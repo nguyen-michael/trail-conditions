@@ -83,35 +83,30 @@
               </li>
               <li>No Go should be used for wet trails or closed trails.</li>
             </ul>
-
           </TabPanel>
 
           <TabPanel>
             <h2>Attributions</h2>
             <p>
-              Made by
-              <a href="https://www.nguyenmichael.dev">Michael Nguyen</a>
-              , you may know me from the past as a Dirt Components wheelbuilder,
-              a Monkey Wrench Bicycles mechanic or we've had a chat on the trail!
+              Made by Michael Nguyen, you may know me from the past as a Dirt
+              Components wheelbuilder, a Monkey Wrench Bicycles mechanic or
+              we've had a chat on the trail!
             </p>
             <p>
-              Inspired by various Austin MTB Trail Conditions
-              <a href="https://www.facebook.com/groups/325119181430845/">
+              Inspired by various Austin MTB Trail Conditions <a
+                href="https://www.facebook.com/groups/325119181430845/">
                 facebook group
-              </a>
-              discussions and Anthony Chen's
-              <a href="https://austintrailconditions.com/">website</a>
+              </a> discussions and Anthony Chen's <a href="https://austintrailconditions.com/">website</a>
             </p>
             <p>
-              Built with
-              <a href="https://svelte.dev/">Svelte.js</a>
-              and favicon from
-              <a
+              Built with <a href="https://svelte.dev/">Svelte.js</a> and favicon
+              from <a
                 href="https://www.freefavicon.com/freefavicons/objects/iconinfo/cog-2-152-275104.html">
                 here
-              </a>
-              .
+              </a> . Social sharing image from <a
+                href="https://unsplash.com/@simmerdownjpg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">here</a>.
             </p>
+            <p>(I'm available for hire / Lookin' for a job!)</p>
           </TabPanel>
         </Tabs>
       </div>

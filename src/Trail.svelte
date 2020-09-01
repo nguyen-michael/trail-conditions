@@ -61,19 +61,24 @@
   }
 
   .nogo {
-    color: red;
+    color: #F94144;
     font-weight: bold;
   }
   .caution {
-    color: orange;
+    color: #F3722C;
     font-weight: bold;
   }
   .mostly {
-    color: greenyellow;
+    color: #90BE6D;
     font-weight: bold;
   }
   .gtg {
-    color: forestgreen;
+    color: #43AA8B;
+    font-weight: bold;
+  }
+  
+  .need {
+    color: #F8961E;
     font-weight: bold;
   }
 </style>
@@ -99,7 +104,7 @@
             </TabList>
 
             <TabPanel>
-              <h2 class={result.condition}>{result.condition}</h2>
+              <h2 class={result.condition}>{conditionSwitcher(result.condition)}</h2>
               <p>{result.description}</p>
               <p>updated: {processDate(result.created).datetime}</p>
             </TabPanel>
@@ -122,7 +127,7 @@
     <div class="header" on:click={() => expand()}>
       <span class="name">{shortName}</span>
       :
-      <span class="nogo">Needs condition</span>
+      <span class="need">Needs condition</span>
     </div>
     {#if opened}
       <div class="slider" transition:slide={{ duration: 250 }}>
